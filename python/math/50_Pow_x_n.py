@@ -1,15 +1,20 @@
 class Solution:
     def myPow(self, x: float, n: int) -> float:
-        a = 1
-        # print(n)
-        for i in range(n):
-            a *= x
-            # print(i)
+        # take 1ms
+        # print(x**n)
 
-        # print(round(a))
-
+        # try make 0ms
+        p = abs(n)
+        res = 1.0
 
 
+        while p > 0:
+            if p % 2 ==1:
+                res *= x
+            x*=x
+            p //=2
+        # print(res)
+        print( 1.0 / res if n < 0 else res)
 
 for _ in [
     [2.00000, 10],
